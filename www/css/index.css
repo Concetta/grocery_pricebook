@@ -7,6 +7,11 @@
   padding-top: 10px;
 }
 
+.btn-default {
+  color: #9d9d9d;
+  background-color: #101010;
+}
+
 span.twitter-typeahead .tt-dropdown-menu {
   position: absolute;
   top: 100%;
