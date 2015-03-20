@@ -35,26 +35,22 @@ var app = {
 function update_entries(entries) {
   $('#entries').empty();
   $.each(entries, function( _i, entry ) {
-    var content = '<b>' + entry.generic_name + '(' + entry.quanity_unit + ')</b>';
-    content += '<table class="price-listing">';
+    var content = '<b>' + entry.generic_name + '</b>';
+    content += '<table class="table">';
     content += '<thead>';
-    content += "<td>Date on</td>";
     content += "<td>Brand Name</td>";
     content += "<td>Store</td>";
-    content += "<td>Location</td>";
-    content += "<td>Quanity</td>";
-    content += "<td>PP</td>";
+    content += "<td>Sets</td>";
+    content += '<td> Price Per ' + entry.quanity_unit + '</td>';
     content += '</thead>';
-
     content += '<tbody>';
 
     $.each(entry.prices, function( _j, price ) {
-      var new_row = "<td>" + price.date_on + "</td>";
+      var new_row = "";
       new_row += "<td>" + price.product_brand_name + "</td>";
       new_row += "<td>" + price.store + "</td>";
-      new_row += "<td>" + price.location + "</td>";
-      new_row += "<td>" + price.quanity + "</td>";
-      new_row += "<td>" + (price.total_price / price.quanity) + "</td>";
+      new_row += "<td>" + price.sets_of + "</td>";
+      new_row += "<td>" + (Math.round((price.total_price / price.quanity)*100)/100)+ "</td>";
       content += '<tr>' + new_row + '</tr>';
     });
     content += '</tbody></table>';
