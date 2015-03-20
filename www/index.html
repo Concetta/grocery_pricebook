@@ -6,32 +6,58 @@
     <meta name="msapplication-tap-highlight" content="no" />
     <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/index.css" />
-    <title>Hello World</title>
+    <title>Grocery PriceBook</title>
   </head>
   <body>
-    <div class="app">
-      <h1>Grocery PriceBook</h1>
-      <div>
-          <a href="/new.html">New Item</a>
+    <nav class="navbar navbar-inverse navbar-fixed-top navbar-styling">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Grocery PriceBook</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/new.html">New Item</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
       </div>
-      <div>
-        <form id="search_form">
-          <input name="search" type="text" placeholder="search"></input>
-          <button>Search</button>
-          <select name="limit">
-            <option>5</option>
-            <option>10</option>
-            <option>15</option>
-            <option>20</option>
-          </select>
-        </form>
+    </nav>
+    <div class="app container-fluid theme-showcase">
+      <div class="row">
+        <h1>Grocery List</h1>
       </div>
-      <div id="entries">
+      <div class="row">
+        <div class="col-md-12">
+          <form id="search_form">
+            <div class="input-group">
+              <input name="search" type="text" placeholder="search" class="form-control"></input>
+                <span class="input-group-btn">
+                  <button class="btn btn-default" type="button">Search</button>
+                </span>
+              <select name="limit">
+                <option>5</option>
+                <option>10</option>
+                <option>15</option>
+                <option>20</option>
+              </select>
+            </div>
+          </form>
+        </div>
+        <div id="entries">
+        </div>
       </div>
     </div>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.10.4/typeahead.bundle.min.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript">
         app.initialize();
